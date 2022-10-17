@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %} Projekt 1 - Dioda {% endblock %}
+{% block content %}
+<br/>
+<h5> Temperatura: {{temperature.temperature}} °C</h5>
+<br/>
+<h5>LED</h5>
+<button type="button" class="btn btn-success" onclick="ledOn()" name="on" value="off">ON</button>
+<button type="button" class="btn btn-danger" onclick="ledOff()" name="off" value="off">OFF</button>
+{% endblock %}
