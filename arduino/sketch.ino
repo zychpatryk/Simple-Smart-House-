@@ -5,9 +5,9 @@
 
 DHT dht(5, DHT11);
 
-const char* ssid = "test";//"komster.net-4jtTvoAx"; // CGA2121_fnwWXP9
-const char* password = "test";//"ihubea737NGR841s"; // PNfCJ5xV7qY8eSA9Ag
-const char* host = "192.168.0.18:5000";
+const char* ssid = "komster.net-4jtTvoAx"; // CGA2121_fnwWXP9
+const char* password = "ihubea737NGR841s"; // PNfCJ5xV7qY8eSA9Ag
+const char* host = "192.168.0.1:5000";
 
 //WiFiServer server(80);
 
