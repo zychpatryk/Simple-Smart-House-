@@ -1,5 +1,5 @@
 Own project created for skills development.
 
-17.10.2022:
--Full registration and login system made in Flask
--Sending data from NodeMCU to database
+17.10.2022: <br/>
+-Full registration and login system made in Flask <br/>
+-Sending data from NodeMCU to database <br/>
