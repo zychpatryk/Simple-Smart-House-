@@ -47,10 +47,16 @@ def sign_up():
         password1 = request.form.get("password1")
         password2 = request.form.get("password2")
         title = request.form.get("titles")
-        
-
+        student_index = request.form.get("index_num")
         email = request.form.get("email")
-        
+        institution = request.form.get("institution")
+        telephone = request.form.get("telephone")
+        ticket = int(request.form.get("ticket"))
+        participation = int(request.form.get("participation"))
+        active_participation = int(request.form.get("active_participation"))
+        from_where = int(request.form.get("from_where"))
+        interests = request.form.get("interests")
+
         userE = User.query.filter_by(email=email).first()
 
         if userE:
@@ -66,7 +72,7 @@ def sign_up():
         elif password1 != password2:
             flash('Podane hasła muszą być identyczne', category='error')
         else:
-            new_user = User(first_name = firstName, surname=surname, password = generate_password_hash(password1, method='sha256'), title=title, student_index = student_index, email=email, )
+            new_user = User(first_name = firstName, surname=surname, password = generate_password_hash(password1, method='sha256'), title=title, student_index = student_index, email=email, institution=institution, telephone=telephone, ticket=ticket, participation=participation, active_participation=active_participation, from_where=from_where, interests=interests)
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
