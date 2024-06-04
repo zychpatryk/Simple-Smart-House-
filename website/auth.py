@@ -42,18 +42,18 @@ def logout():
 @auth.route('/sign-up', methods=["GET", "POST"])
 def sign_up():
     if request.method == "POST":
-        email = request.form.get("email")
-        login = request.form.get("login")
         firstName = request.form.get("firstName")
+        surname = request.form.get("surname")
         password1 = request.form.get("password1")
         password2 = request.form.get("password2")
+        title = request.form.get("titles")
         
-        userL = User.query.filter_by(login=login).first()
+
+        email = request.form.get("email")
+        
         userE = User.query.filter_by(email=email).first()
 
-        if userL:
-            flash('Podany login jest już zajęty', category='error')
-        elif userE:
+        if userE:
             flash('Podany adres e-mail jest już zajęty', category='error')    
         elif len(email) < 4:
             flash('Adres e-mail musi być dłuższy niż 3 znaki oraz musi zawierać "@".', category='error')
@@ -66,7 +66,7 @@ def sign_up():
         elif password1 != password2:
             flash('Podane hasła muszą być identyczne', category='error')
         else:
-            new_user = User(first_name = firstName, email=email, login = login, password = generate_password_hash(password1, method='sha256'))
+            new_user = User(first_name = firstName, surname=surname, password = generate_password_hash(password1, method='sha256'), title=title, student_index = student_index, email=email, )
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
