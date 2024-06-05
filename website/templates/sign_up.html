@@ -3,125 +3,28 @@
 <form method="POST">
     <h3 align="center">ZAREJESTRUJ SIĘ</h3>
     <div class="form-group">
-        <label for="firstName">Imię</label>
-        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Podaj imię" required/>
+        <label for="email">Adres E-mail</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Podaj adres e-mail"/>
     </div>
     <div class="form-group">
-        <label for="surname">Nazwisko</label>
-        <input type="text" class="form-control" id="surname" name="surname" placeholder="Podaj imię" required/>
+        <label for="login">Login</label>
+        <input type="text" class="form-control" id="login" name="login" placeholder="Podaj login"/>
+    </div>
+    <div class="form-group">
+        <label for="firstName">Imię</label>
+        <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Podaj imię"/>
     </div>
     <div class="form-group">
         <label for="password1">Hasło</label>
-        <input type="password" class="form-control" id="password1" name="password1" placeholder="Podaj hasło" required/>
+        <input type="password" class="form-control" id="password1" name="password1" placeholder="Podaj hasło"/>
     </div>
     <div class="form-group">
         <label for="password2">Potwierdź hasło</label>
-        <input type="password" class="form-control" id="password2" name="password2" placeholder="Potwierdź swoje hasło" required/>
+        <input type="password" class="form-control" id="password2" name="password2" placeholder="Potwierdź swoje hasło"/>
     </div>
-    <div class="form-group">
-        <label for="titles">Tytuł: </label>
-        <select name="titles" id="titles" class="form-control" required>
-            <option value="-">-</option>
-            <option value="student">student</option>
-            <option value="inż.">inż.</option>
-            <option value="mgr">mgr</option>
-            <option value="mgr inż.">mgr inż.</option>
-            <option value="dr">dr</option>
-            <option value="dr inż.">dr inż.</option>
-            <option value="dr n. med.">dr n. med.</option>
-            <option value="dr hab.">dr hab.</option>
-            <option value="dr hab. inż.">dr hab. inż.</option>
-            <option value="dr hab. n. med.">dr hab. n. med.</option>
-            <option value="prof. dr hab.">prof. dr hab.</option>
-            <option value="prof. dr hab. inż.">prof. dr hab. inż.</option>
-            <option value="prof. dr hab. n. med.">prof. dr hab. n. med.</option>
-            <option value="inny">inny</option>
-        </select>
-        <input type="text" name="other_title" id="other_title" style="display: none;"  class="form-control" placeholder="Wpisz inny tytuł">
-    </div>
-    <div class="form-group">
-        <label for="index_num">Nr albumu (dotyczy studentów/doktorantów):</label>
-        <input type="number" name="index_num" id="index_num" placeholder = 'Podaj numer albumu/legitymacji studenckiej' class="form-control">
-    </div>
-    <div class="form-group">
-        <label for="institution">Instytucja/Firma:</label>
-        <input type="text" name="institution" id="institution" placeholder="Podaj nazwę instytucji/firmy" class="form-control" required>
-    </div>
-    <div class="form-group">
-        <label for="email">Adres E-mail</label>
-        <input type="email" class="form-control" id="email" name="email" placeholder="Podaj adres e-mail" required/>
-    </div>
-    <div class="form-group">
-        <label for="telephone">Numer telefonu:</label>
-        <input type="tel" name="telephone" class="form-control" id="telephone" placeholder="Podaj numer telefonu" required>
-    </div>
-    <div class="form-group">
-        <label for="ticket">Rodzaj biletu:</label><br>
-        <input type="radio" id="reduced_ticket" name="ticket" value=2 required> 
-        <label for="reduced_ticket">Ulgowy</label><br>
-        <input type="radio" id="normal_ticket" name="ticket" value=1 required> 
-        <label for="normal_ticket">Normalny</label><br>
-    </div>
-    <div class="form-group">
-        <label for="participation">Typ udziału:</label>
-        <select name="participation" id="participation" class="form-control" required>
-            <option value="1">Bierna</option>
-            <option value="2">Czynna</option>
-        </select>
-        <div id="active_participation_fields" style="display: none;">
-            <label for="presentation_article">Prezentacja i artykuł</label>
-            <input type="radio"  name="active_participation" id="presentation_article" value="1"> <br>
-            
-            <label for="abstract">Abstrakt:</label>
-            <input type="radio" name="active_participation" id="abstract" value="2"> <br>
-            
-            <label for="poster">Plakat:</label>
-            <input type="radio" name="active_participation" id="poster" value="3"> <br>
-        </div>
-    </div>
-    <div class = "form-group">
-        <label for="from_where">Skąd dowiedziałaś/doowiedziałeś się o konferencji?</label><br>
-        <input type="checkbox" name="from_where" id="last_conf" value="1">
-        <label for="last_conf">Brałam/brałem udział w poprzedniej konferencji</label><br>
-        <input type="checkbox" name="from_where" id="social_media" value="2"> 
-        <label for="social_media">Z social mediów</label><br>
-        <input type="checkbox" name="from_where" id="friends" value="3" >
-        <label for="friends">Od znajomych</label><br>
-        <input type="checkbox" name="from_where" id="other" value="4" >
-        <label for="other">Inne</label><br>
-    </div>
-    <div class ="form-group">
-        <label for="interests">Zainteresowania/Obszar badań naukowych:</label>
-        <input type="text" name="interests" id="interests" class="form-control" maxlength="150"><br>
-    </div>
-    
     <br/>
     <button type="submit" class="btn btn-primary">Prześlij</button>
-
-
 </form>
-
-<script>
-    document.getElementById('titles').addEventListener('change', function() {
-        var selectedOption = this.value;
-        if (selectedOption === 'inny') {
-            document.getElementById('other_title').style.display = 'block';
-            document.getElementById('other_title').setAttribute('required', 'required');
-        } else {
-            document.getElementById('other_title').style.display = 'none';
-            document.getElementById('other_title').removeAttribute('required');
-        }
-    });
-
-    document.getElementById('participation').addEventListener('change', function() {
-        var selectedOption = this.value;
-        if (selectedOption === 'czynna') {
-            document.getElementById('active_participation_fields').style.display = 'block';
-        } else {
-            document.getElementById('active_participation_fields').style.display = 'none';
-        }
-    });
-</script>
 {% endblock %}
 
 

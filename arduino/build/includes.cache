@@ -1,0 +1,17 @@
+[
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\Papryk\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.0.2\\cores\\esp8266"
+  },
+  {
+    "Sourcefile": null,
+    "Include": "",
+    "Includepath": "C:\\Users\\Papryk\\AppData\\Local\\Arduino15\\packages\\esp8266\\hardware\\esp8266\\3.0.2\\variants\\nodemcu"
+  },
+  {
+    "Sourcefile": "d:\\Google Drive\\programowanie\\_Projects\\Smart House\\arduino\\build\\sketch\\sketch.ino.cpp",
+    "Include": "",
+    "Includepath": null
+  }
+]

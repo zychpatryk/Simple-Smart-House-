@@ -25,7 +25,6 @@ def create_app():
 
     with app.app_context():
         db.create_all()
-        #db.drop_all()
     #create_database(app)
 
     login_manager = LoginManager()
